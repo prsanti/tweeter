@@ -35,3 +35,24 @@ app.use("/tweets", tweetsRoutes);
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
+
+// Post New Tweet
+app.get("/", (req, res) => {
+  console.log(req.body);
+  const characterLimit = 140;
+  let characterCount = 0;
+  const templateVars = {
+    characterLimit,
+    characterCount
+  };
+  res.render("public/index.html", templateVars);
+});
+
+app.post("/tweets/", (req, res) => {
+  // console.log(req.body);
+  // res.render("index");
+});
+
+app.get("/tweets/", (res, req) => {
+  console.log(req.body);
+});
