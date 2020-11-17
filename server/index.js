@@ -51,8 +51,11 @@ app.get("/", (req, res) => {
 app.post("/tweets/", (req, res) => {
   // console.log(req.body);
   // res.render("index");
+  //console.log(document);
+  res.render("/public/index.html");
 });
 
 app.get("/tweets/", (res, req) => {
   console.log(req.body);
+  res.render("/public/index.html");
 });
