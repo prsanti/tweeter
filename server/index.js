@@ -48,13 +48,13 @@ app.listen(PORT, () => {
 //   res.render("public/index.html", templateVars);
 // });
 
-app.post("/tweets/", (req, res) => {
-  // console.log(req.body);
-  // res.render("index");
-  //console.log(document);
-  // return res.redirect("/public/index.html");
-  return res.render("/");
-});
+// app.post("/tweets/", (req, res) => {
+//   // console.log(req.body);
+//   // res.render("index");
+//   //console.log(document);
+//   // return res.redirect("/public/index.html");
+//   return res.render("/");
+// });
 
 // app.get("/tweets/", (res, req) => {
 //   // console.log(req.body);
