@@ -124,6 +124,22 @@ const createTweetElement = function(tweet) {
 }
 
 $(document).ready(function() {
-  // console.log(renderTweets(data));
+  $("form").on("submit", event => {
+    event.preventDefault();
+
+    console.log(
+      $("form textarea").val(),
+      $("form").serialize()
+    );
+  });
+
+  const loadTweets = () => {
+    $.ajax("http://localhost:8080/tweets", { method: "GET" })
+    .then(originalTweets => {
+      console.log("pls help", originalTweets);
+    });
+  };
+
+  loadTweets();
   renderTweets(data);
 });
