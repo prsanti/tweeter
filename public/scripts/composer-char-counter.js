@@ -2,9 +2,9 @@ $(document).ready(function() {
   // console.log(document);
 
   // testing stuff
-  $("form.form-tweet").on("mouseenter", event => {
-    console.log($(event.target));
-  });
+  // $("form.form-tweet").on("mouseenter", event => {
+  //   console.log($(event.target));
+  // });
 
   // on keypress or input???
   $("textarea#tweet-text").on("input", function(event) {

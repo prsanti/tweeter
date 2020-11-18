@@ -49,11 +49,6 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form class="form-tweet" action="/tweets/" method="POST">
@@ -65,6 +60,22 @@
           </div>
         </form>
       </section>
+
+      <container class="container">
+        <div class="tweet hoverable">
+          <header class="header">
+            <img class="header icon" src="https://i.imgur.com/2WZtOD6.png" height="5%" width="5%">
+            <p>name</p>
+            <p class="handle">@test</p>
+          </header>
+          <p class="tweet-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <footer class="date">date</footer>
+        </div>
+      </container>
     </main>
   </body>
 </html>
