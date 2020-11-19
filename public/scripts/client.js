@@ -4,11 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//const db = require("../../server/lib/in-memory-db");
-
-//const { generateRandomUser } = require('../../server/lib/util/user-helper.js');
-// console.log(generateRandomUser());
-
 const renderTweets = function(tweets) {
 // loops through tweets
 // calls createTweetElement for each tweet
@@ -40,20 +35,28 @@ const createTweetElement = function(tweet) {
 
 const tweetValidation = (text) => {
   if (text.length > 140) {
-    alert("Tweet exceeds 140 characters!");
+    // alert("Tweet exceeds 140 characters!");
+    $("#error").text("Tweet exceeds 140 characters!");
+    // $(".error").slideDown();
     return false;
   } else if (!text) {
-    alert("No text");
+    $("#error").text("Tweet has no text!");
+    // alert("No text");
     return false;
   } else {
     return true;
   }
 };
 
+const escape = function(str) {
+  let textArea = document.createElement("textarea");
+  textArea.appendChild(document.createTextNode(str));
+  return textArea.innerHTML;
+}
+
 const loadTweets = () => {
   $.ajax("http://localhost:8080/tweets", { method: "GET" })
   .then(initialTweets => {
-    //console.log("pls help", initialTweets);
     renderTweets(initialTweets);
   });
 };
@@ -64,18 +67,21 @@ $(document).ready(function() {
   $("form").on("submit", event => {
     event.preventDefault();
 
-    const documentVar = $("form textarea").val();
-    if (tweetValidation(documentVar)) {
+    const userText = escape($("form textarea").val());
+    $("#tweet-text").val(userText);
+    if (tweetValidation(userText)) {
       $.ajax({
         url:"/tweets/",
         method: "POST",
         data:$("form").serialize()
       })
       .then(() => {
+        $("#tweet-text").val("");
         $("#tweets-container").empty();
         loadTweets();
       })
     } else {
+      $("#error").slideDown();
       console.log("Invalid input");
     }
   });

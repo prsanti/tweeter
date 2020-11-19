@@ -17,6 +17,7 @@ $(document).ready(function() {
       $("output.counter").css("color", "red");
     } else {
       $("output.counter").css("color", "#545149");
+      $("#error").hide();
     }
 
     $("output.counter").html(charLimit - textLength);

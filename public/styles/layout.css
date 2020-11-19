@@ -40,6 +40,10 @@ main {
   width: 90%;
  }
 
+ #error {
+   display: none;
+ }
+
  /* Default Tweets */
 .tweet {
   display: flex;

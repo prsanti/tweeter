@@ -50,6 +50,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <div class="error" id="error">Too long</div>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form class="form-tweet" action="/tweets/" method="POST">
@@ -62,10 +63,7 @@
         </form>
       </section>
 
-      <article class="container" id="tweets-container">
-
-
-      </article>
+      <article class="container" id="tweets-container"></article>
       <!-- 
       <article class="container" id="tweets-container">
         <div class="tweet hoverable">
