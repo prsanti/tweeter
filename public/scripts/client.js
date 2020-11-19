@@ -4,94 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// $(document).ready(function() {
-//   // DYNAMIC TWEETS
-// // Test / driver code (temporary). Eventually will get this from the server.
-//   $("form").on("submit", event => {
-//     event.preventDefault();
+//const db = require("../../server/lib/in-memory-db");
 
-//     console.log(
-//       $("form input").val(),
-//       $("form textarea").val(),
-//       $("form").serialize()
-//     );
-//     const form = 
-
-//     createTweetElement()
-//   });  
-
-// const tweetData = {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png",
-//         "handle": "@SirIsaac"
-//       },
-//     "content": {
-//         "text": "If I have seen further it is by standing on the shoulders of giants"
-//       },
-//     "created_at": 1461116232227
-//   }
-
-//   const createTweetElement = () => {
-
-//   };
-
-//   // const submitTweet = (event, action) => {
-//   //   event.preventDefault();
-
-//   //   $
-//   //     .ajax({
-//   //       url: "/tweets/",
-//   //       method: "POST",
-//   //       data: $("form").serialize()
-//   //     })
-//   // }
-
-//   // const createTweetElement = (post) => {
-//   //   const title = $("<h2>").text(post.title);
-//   //   const text = $("<p>").text(post.text);
-//   //   const newSection = $("<section>");
-
-//   //   newSection.append(title);
-//   //   newSection.append(text);
-//   //   newSection.addClass("container")
-
-//   //   return newSection;
-//   // };
-
-//   // const $tweet = createTweetElement(tweetData);
-
-//   // // Test / driver code (temporary)
-//   // console.log($tweet); // to see what it looks like
-//   // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-// });
-
-
-// Fake data taken from initial-tweets.json
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
+//const { generateRandomUser } = require('../../server/lib/util/user-helper.js');
+// console.log(generateRandomUser());
 
 const renderTweets = function(tweets) {
 // loops through tweets
@@ -119,29 +35,48 @@ const createTweetElement = function(tweet) {
       </div>
     </article>
     `);
-  //console.log($tweet);
   return $tweet;
 }
 
+const tweetValidation = (text) => {
+  if (text.length > 140) {
+    alert("Tweet exceeds 140 characters!");
+    return false;
+  } else if (!text) {
+    alert("No text");
+    return false;
+  } else {
+    return true;
+  }
+};
+
+const loadTweets = () => {
+  $.ajax("http://localhost:8080/tweets", { method: "GET" })
+  .then(initialTweets => {
+    //console.log("pls help", initialTweets);
+    renderTweets(initialTweets);
+  });
+};
+
 $(document).ready(function() {
+  loadTweets();
+
   $("form").on("submit", event => {
     event.preventDefault();
 
-    console.log(
-      $("form textarea").val(),
-      $("form").serialize()
-    );
+    const documentVar = $("form textarea").val();
+    if (tweetValidation(documentVar)) {
+      $.ajax({
+        url:"/tweets/",
+        method: "POST",
+        data:$("form").serialize()
+      })
+      .then(() => {
+        $("#tweets-container").empty();
+        loadTweets();
+      })
+    } else {
+      console.log("Invalid input");
+    }
   });
-
-  // const getTweets = require('../../server/lib/data-helpers');
-  const loadTweets = () => {
-    $.ajax("http://localhost:8080/tweets", { method: "GET" })
-    .then(originalTweets => {
-      // console.log("pls help", originalTweets);
-      renderTweets(originalTweets);
-    });
-  };
-
-  loadTweets();
-  // renderTweets(data);
 });

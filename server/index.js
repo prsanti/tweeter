@@ -25,6 +25,9 @@ const DataHelpers = require("./lib/data-helpers.js")(db);
 // Update the dates for the initial tweets (data-files/initial-tweets.json).
 // require("./lib/date-adjust")();
 
+// Testing generate random user
+const generateUser = require("./lib/util/user-helper");
+
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.
 const tweetsRoutes = require("./routes/tweets")(DataHelpers);
@@ -35,28 +38,3 @@ app.use("/tweets", tweetsRoutes);
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
-
-// Post New Tweet
-// app.get("/", (req, res) => {
-//   console.log(req.body);
-//   const characterLimit = 140;
-//   let characterCount = 0;
-//   const templateVars = {
-//     characterLimit,
-//     characterCount
-//   };
-//   res.render("public/index.html", templateVars);
-// });
-
-// app.post("/tweets/", (req, res) => {
-//   // console.log(req.body);
-//   // res.render("index");
-//   //console.log(document);
-//   // return res.redirect("/public/index.html");
-//   return res.render("/");
-// });
-
-// app.get("/tweets/", (res, req) => {
-//   // console.log(req.body);
-//   return res.render("/");
-// });
