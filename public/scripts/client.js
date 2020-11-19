@@ -36,11 +36,11 @@ const createTweetElement = function(tweet) {
 const tweetValidation = (text) => {
   if (text.length > 140) {
     // alert("Tweet exceeds 140 characters!");
-    $("#error").text("Tweet exceeds 140 characters!");
+    $("#error").text("❗️ Tweet exceeds 140 characters! ❗️");
     // $(".error").slideDown();
     return false;
   } else if (!text) {
-    $("#error").text("Tweet has no text!");
+    $("#error").text("❗️ Tweet has no text! ❗️");
     // alert("No text");
     return false;
   } else {

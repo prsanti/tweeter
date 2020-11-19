@@ -1,20 +1,20 @@
 nav {
   color: #FFFFFF;
-  background-color: #4056A1;
+  background-color: transparent;
   font-family: "Bungee";
   height: 120px;
   width: 100%;
   font-size: xx-large;
   padding: 1.5em;
 
+  position: absolute;
+  top: 0;
+  display: none;
+
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-
-
-  position: sticky;
-  top: 0%;
  }
 
 .writeTweet {
@@ -22,3 +22,11 @@ nav {
   flex-direction: row;
   font-size: 0.75em
  }
+
+ @media only screen and (min-width: 1024px) {
+   nav {
+    background-color: #4056A1;
+    position: sticky;
+
+   }
+}
