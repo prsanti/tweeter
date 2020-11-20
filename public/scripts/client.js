@@ -26,7 +26,7 @@ const createTweetElement = function(tweet) {
         </header>
         <p class="tweet-description">${tweet.content.text}</p>
         <footer class="data">
-          ${tweet.created_at} days ago
+          ${moment(tweet.created_at).fromNow()}
           <div class="graphics">
             <img class="graphic-icon flag" src="./images/flag-solid.svg">
             <img class="graphic-icon retweet" src="./images/retweet-solid.svg">
