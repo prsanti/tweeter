@@ -25,9 +25,6 @@ const DataHelpers = require("./lib/data-helpers.js")(db);
 // Update the dates for the initial tweets (data-files/initial-tweets.json).
 // require("./lib/date-adjust")();
 
-// Testing generate random user
-const generateUser = require("./lib/util/user-helper");
-
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.
 const tweetsRoutes = require("./routes/tweets")(DataHelpers);

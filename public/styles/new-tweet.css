@@ -43,11 +43,3 @@ button.new-tweet {
   background-color: #4056A1;
   width: 12%;
 }
-
-/* @media screen and (min-width: 1024px) {
-  #tweet-box {
-    position: fixed;
-    left: 65%;
-
-  }
-} */

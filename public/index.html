@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Viewport and Character set -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
-    <!-- <meta content="width=device-width, initial-scale=1" name="viewport" /> -->
 
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
@@ -41,7 +41,7 @@
       </div>
     </nav>
 
-    <!-- <p>testing "Source Sans Pro" font on body</p> -->
+    <!-- Header img and name -->
     <div id="header">
       <header>
         <div>
@@ -57,11 +57,12 @@
     
       <!-- Page-specific (main) content here -->
       <main class="container">
+        <!-- Error box-->
         <div class="error" id="error">Too long</div>
+        <!-- Tweet submission -->
         <section class="tweet-box">
           <h2>Compose Tweet</h2>
             <form class="form-tweet" action="/tweets/" method="POST">
-              <!-- <label for="tweet-text">What are you humming about?</label> -->
               <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
               <div class="tweet-description">
                 <button type="submit" class="new-tweet">Tweet</button>
@@ -69,30 +70,11 @@
               </div>
             </form>
           </section>
-      <!-- </div> -->
-
-      <div id="all-tweets">
-        <article class="container" id="tweets-container"></article>
-      </div>
-        <!-- 
-        <article class="container" id="tweets-container">
-          <div class="tweet hoverable">
-            <header class="header">
-              <img class="header icon" src="https://i.imgur.com/2WZtOD6.png" height="5%" width="5%">
-              <p>name</p>
-              <p class="handle">@test</p>
-            </header>
-            <p class="tweet-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            <footer class="date">date</footer>
-          </div>
-        </article>
-        -->
+        
+        <!-- All tweets location-->
+        <div id="all-tweets">
+          <article class="container" id="tweets-container"></article>
+        </div>
       </main>
-
-    <!-- </div> -->
   </body>
 </html>

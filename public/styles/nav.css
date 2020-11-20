@@ -39,8 +39,6 @@ nav {
   100% { transform: translateY(-8px); }
 }
 nav i {
-  /* Chevron Icon */
-  color: red;
   margin-top:3px;
   animation: bounce 0.8s;
   animation-direction: alternate;
