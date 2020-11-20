@@ -23,6 +23,23 @@ nav {
   font-size: 0.75em
  }
 
+  /* drop down arrow in nav */
+  .drop-down-arrow {
+    height: 25px;
+    width: 20px;
+
+    margin-top:3px;
+    animation: bounce 0.8s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+  
+  /* Animation for arrow */
+  @keyframes bounce { 
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+  }
+
  @media only screen and (min-width: 1024px) {
    nav {
     background-color: #4056A1;
@@ -34,13 +51,4 @@ nav {
    }
 }
 
-@keyframes bounce { 
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
-}
-nav i {
-  margin-top:3px;
-  animation: bounce 0.8s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-}
+

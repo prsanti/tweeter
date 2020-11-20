@@ -49,11 +49,6 @@ main {
   margin: 1rem;
 }
 
-/* button .new-tweet {
-  width: 100%;
-  font-size: auto;
-} */
-
  /* Default Tweets */
 .tweet {
   display: flex;
@@ -62,10 +57,12 @@ main {
   margin: 1em;
 }
 
+/* Header for profile pic and name */
 #header {
   width: 100%;
 }
 
+/* Styling for profile picture and name */
 .tweet header{
   display: flex;
   flex-direction: row;
@@ -75,7 +72,7 @@ main {
   height: 100%;
   width: 100%;
 
-  font-size: 3vw;
+  font-size: 2vw;
 
   color: #545149;
   background-color: #f4f1ec;
@@ -83,13 +80,19 @@ main {
   padding: 1em;
  }
 
- .icon {
+ .tweet .username {
+  width: 100%;
+  font-size: x-large;
+}
+
+ .tweet .icon {
   margin-right: 1em;
 }
 
+
+/* Hover to show border around tweets and reveal user handle */
 .hoverable:hover .handle {
   opacity: 0.5;
-
 }
 
 .hoverable:hover:before .handle {
@@ -101,10 +104,11 @@ main {
   box-shadow: 5px 5px #4056A1;
 }
 
+/* Style for tweets in the body */
 .tweet .handle {
    color: #4056A1;
    opacity: 0.5;
-   padding-left: 17em;
+   padding-left: 40%;
    opacity: 0%;
  }
  
@@ -118,6 +122,18 @@ main {
 
   font-family: "Source Sans Pro";
   font-size: medium;
+ }
+
+ .tweet .tweet-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-weight: 500;
+  margin-left: 1em;
+  margin-right: 1em;
+
+  font-family: "Source Sans Pro";
+  font-size: x-large;
  }
 
 .tweet footer {
@@ -135,28 +151,26 @@ footer .graphics {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding-left: 10px;
 }
 
-.drop-down-arrow {
-  height: 25px;
-  width: 20px;
-}
-
+/* Icon styling */
 .graphic-icon {
   height: 20px;
   width: 25px;
   /* left: 40%; */
   position: absolute;
   justify-content: center;
+  align-items: center;
 }
 
 .flag {
-  left: 65%;
+  left: 75%;
 }
 
 .retweet {
-  left: 75%;
+  left: 80%;
 }
 
 .heart {
@@ -169,7 +183,7 @@ footer .graphics {
   align-items: center;
 }
 
-
+/* Desktop styling */
 @media screen and (min-width: 1024px) {
   #header{
     position: fixed;

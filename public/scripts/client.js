@@ -20,11 +20,11 @@ const createTweetElement = function(tweet) {
     <article>
       <div class="tweet hoverable">
         <header class="header">
-          <img class="header icon" src="${tweet.user.avatars}" height="5%" width="5%">
-          <p>${tweet.user.name}</p>
+          <img class="header icon" src="${tweet.user.avatars}" height="10%" width="10%">
+          <p class="username">${tweet.user.name}</p>
           <p class="handle">${tweet.user.handle}</p>
         </header>
-        <p class="tweet-description">${tweet.content.text}</p>
+        <p class="tweet-content">${tweet.content.text}</p>
         <footer class="data">
           ${moment(tweet.created_at).fromNow()}
           <div class="graphics">
