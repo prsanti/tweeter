@@ -28,7 +28,7 @@ nav {
     height: 25px;
     width: 20px;
 
-    margin-top:3px;
+    margin-top: 10px;
     animation: bounce 0.8s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
