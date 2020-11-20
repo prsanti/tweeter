@@ -8,15 +8,14 @@ const renderTweets = function(tweets) {
 // loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
-
   for (const key of tweets) {
     const newTweet = createTweetElement(key);
     $('#tweets-container').prepend(newTweet);
   }
 }
 
+// Creates new tweet in hard coded HTML
 const createTweetElement = function(tweet) {
-  // const $tweet = $(`<article class="tweet">Hello world</article>`);
   let $tweet = $(`
     <article>
       <div class="tweet hoverable">
@@ -26,34 +25,41 @@ const createTweetElement = function(tweet) {
           <p class="handle">${tweet.user.handle}</p>
         </header>
         <p class="tweet-description">${tweet.content.text}</p>
-        <footer class="data">${tweet.created_at}</footer>
+        <footer class="data">
+          ${tweet.created_at} days ago
+          <div class="graphics">
+            <img class="graphic-icon flag" src="./images/flag-solid.svg">
+            <img class="graphic-icon retweet" src="./images/retweet-solid.svg">
+            <img class="graphic-icon heart" src="./images/heart-solid.svg">
+          </div>
+          </footer>
       </div>
     </article>
     `);
   return $tweet;
 }
 
+// Checks if the tweet is more than 140 or 0 characters to send an error
 const tweetValidation = (text) => {
   if (text.length > 140) {
-    // alert("Tweet exceeds 140 characters!");
     $("#error").text("❗️ Tweet exceeds 140 characters! ❗️");
-    // $(".error").slideDown();
     return false;
   } else if (!text) {
     $("#error").text("❗️ Tweet has no text! ❗️");
-    // alert("No text");
     return false;
   } else {
     return true;
   }
 };
 
+// escape function to prevent cross-site scripting for the tweet box;
 const escape = function(str) {
   let textArea = document.createElement("textarea");
   textArea.appendChild(document.createTextNode(str));
   return textArea.innerHTML;
 }
 
+// Loads all tweets from the database
 const loadTweets = () => {
   $.ajax("http://localhost:8080/tweets", { method: "GET" })
   .then(initialTweets => {
