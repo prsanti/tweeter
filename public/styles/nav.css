@@ -33,7 +33,7 @@ nav {
     animation-direction: alternate;
     animation-iteration-count: infinite;
   }
-  
+
   /* Animation for arrow */
   @keyframes bounce { 
     0% { transform: translateY(0); }
@@ -50,5 +50,3 @@ nav {
     z-index: 2;
    }
 }
-
-

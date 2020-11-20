@@ -30,6 +30,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ /* pls be nice, i didn't know what i was doing half the time */
 main {
   color: #545149;
   background-color: #f4f1ec;
@@ -89,7 +90,6 @@ main {
   margin-right: 1em;
 }
 
-
 /* Hover to show border around tweets and reveal user handle */
 .hoverable:hover .handle {
   opacity: 0.5;
@@ -108,7 +108,7 @@ main {
 .tweet .handle {
    color: #4056A1;
    opacity: 0.5;
-   padding-left: 40%;
+   padding-left: 15%;
    opacity: 0%;
  }
  
@@ -159,7 +159,6 @@ footer .graphics {
 .graphic-icon {
   height: 20px;
   width: 25px;
-  /* left: 40%; */
   position: absolute;
   justify-content: center;
   align-items: center;
