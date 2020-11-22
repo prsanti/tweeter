@@ -165,15 +165,15 @@ footer .graphics {
 }
 
 .flag {
-  left: 75%;
+  left: 70%;
 }
 
 .retweet {
-  left: 80%;
+  left: 75%;
 }
 
 .heart {
-  left: 85%;
+  left: 80%;
 }
 
 .write {
@@ -203,5 +203,17 @@ footer .graphics {
     width: 50%;
     left: 50%;
     top: 50%;
+  }
+
+  .flag {
+    left: 80%;
+  }
+  
+  .retweet {
+    left: 85%;
+  }
+  
+  .heart {
+    left: 90%;
   }
 }

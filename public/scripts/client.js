@@ -93,6 +93,8 @@ $(document).ready(function() {
           $("#tweet-text").val("");
           // empties the list of tweets to prevent duplicates
           $("#tweets-container").empty();
+          // Resets the character counter back to 140
+          $("output.counter").html(140);
           // reloads all tweets with the new tweets
           loadTweets();
         });
